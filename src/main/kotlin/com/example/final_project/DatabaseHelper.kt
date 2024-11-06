@@ -72,23 +72,29 @@ class DatabaseHelper {
     }
 
     // Query all files from the database and return as a list of File objects
-//    fun getAllFiles(): List<File> {
-//        val files = mutableListOf<File>()
-//        val connection = connect()
-//        val selectSQL = "SELECT id, file_name, file_content FROM files"
-//
-//        try {
-//            val resultSet = connection?.createStatement()?.executeQuery(selectSQL)
-//            while (resultSet?.next() == true) {
-//                val fileName = resultSet.getString("file_name")
-//                val fileContent = resultSet.getString("file_content")
-//                files.add(File(fileName, fileContent))
-//            }
-//        } catch (e: SQLException) {
-//            println("Error fetching files: ${e.message}")
-//        }
-//        return files
-//    }
+    fun getAllFiles(): List<File> {
+        val files = mutableListOf<File>()
+
+        // Connect and create SQL to retrieve all files
+        val connection = connect()
+        val selectSQL = "SELECT id, file_name, file_content FROM files"
+
+        try {
+
+            // Get all files
+            val resultSet = connection?.createStatement()?.executeQuery(selectSQL)
+
+            // Loop through the set of files one by one, adding them to the list of files
+            while (resultSet?.next() == true) {
+                val fileName = resultSet.getString("file_name")
+                val fileContent = resultSet.getString("file_content")
+                files.add(File(fileName, fileContent))
+            }
+        } catch (e: SQLException) {
+            println("Error fetching files: ${e.message}")
+        }
+        return files
+    }
 
     // Get a specific file by its ID
 //    fun getFileById(fileId: Int): File? {
