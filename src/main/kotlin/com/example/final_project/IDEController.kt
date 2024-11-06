@@ -4,10 +4,15 @@ import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
+import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
+import javafx.scene.Parent
+import javafx.scene.Scene
 import javafx.scene.control.Button
 import javafx.scene.control.ListView
 import javafx.scene.control.TextArea
+import javafx.stage.Modality
+import javafx.stage.Stage
 import java.net.URL
 import java.util.*
 
@@ -46,8 +51,6 @@ class IDEController : Initializable {
         // Set the ListView's items to the list of file names
         fileList?.items = fileNames
 
-
-
         print(fileNames)
     }
 
@@ -55,13 +58,67 @@ class IDEController : Initializable {
     @FXML
     fun createNewFile(event: ActionEvent?) {
 
-        val file = File()
+
+//        // Pop up window to name the file
+//        // Load the FXML for the popup window
+//        val loader = FXMLLoader(javaClass.getResource("newFilePopup.fxml"))
+//        val root = loader.load<Parent>()
+//
+//        // Create a new stage for the popup
+//        val stage = Stage()
+//        stage.title = "New File"
+//        stage.initModality(Modality.APPLICATION_MODAL)  // This makes the popup modal
+//        stage.scene = Scene(root)
+//
+//        // Show the popup window
+//        stage.showAndWait()
+
+
+
+        var fileName: String = "new file"
+
+        // Check if file name already exists
+        val fileManager = FileManager(dbHelper)
+
+        if(!fileManager.checkFileDuplicate(fileName))
+        {
+            // Check if file name is valid
+            if (fileManager.checkFileNameValid(fileName))
+            {
+
+                println("valid")
+
+
+                // Format file name
+                print(fileManager.formatFileName(fileName))
+
+                // Create file
+            }
+            else
+            {
+
+            }
+
+
+        }
+        else
+        {
+
+        }
+
+
+
+
+        // Create new file
+        val file = File(fileName)
+
+
         textContent.text = file.getFileContent()
 
         dbHelper.insertFile(file)
 
         // Add new file to list view
-        fileList?.items?.add(file.getFileName());
+        fileList.items?.add(file.getFileName());
 
     }
 }

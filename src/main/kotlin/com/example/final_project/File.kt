@@ -1,7 +1,6 @@
 package com.example.final_project
 
-class File(private var fileName: String = "Untitled", private var fileContent: String = "This is a new file! Start writing code here!") {
-
+class File(private var fileName: String, private var fileContent: String = "This is a new file! Start writing code here!") {
 
 
     fun getFileContent(): String {
@@ -21,8 +20,10 @@ class File(private var fileName: String = "Untitled", private var fileContent: S
     }
 
 
-    override fun toString(): String
-    {
-        return this.fileName + ", " + this.fileContent
-    }
+//    override fun toString(): String
+//    {
+//        return this.fileName + ", " + this.fileContent
+//    }
+
+
 }
