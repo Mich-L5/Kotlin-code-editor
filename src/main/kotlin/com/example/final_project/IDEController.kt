@@ -26,7 +26,7 @@ class IDEController : Initializable {
     private lateinit var textContent: TextArea
 
     @FXML
-    private val newFile: Button? = null
+    private lateinit var newFile: Button
 
     @FXML
     private lateinit var fileList: ListView<String>
@@ -35,7 +35,7 @@ class IDEController : Initializable {
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
-        textContent.text = "No file selected. Create a new file to get started."
+        textContent.text = "No file selected. Select a file or create a new file to get started."
 
         // Get all existing files and load them into the file list view
         // Get all files from the database
@@ -59,66 +59,38 @@ class IDEController : Initializable {
     fun createNewFile(event: ActionEvent?) {
 
 
-//        // Pop up window to name the file
-//        // Load the FXML for the popup window
-//        val loader = FXMLLoader(javaClass.getResource("newFilePopup.fxml"))
-//        val root = loader.load<Parent>()
-//
-//        // Create a new stage for the popup
-//        val stage = Stage()
-//        stage.title = "New File"
-//        stage.initModality(Modality.APPLICATION_MODAL)  // This makes the popup modal
-//        stage.scene = Scene(root)
-//
-//        // Show the popup window
-//        stage.showAndWait()
+        // Pop up window to name the file
+        // Load the FXML for the popup window
+        val loader = FXMLLoader(javaClass.getResource("newFilePopup.fxml"))
+        val root = loader.load<Parent>()
+
+        // Get the NewFilePopupController from the loader
+        val newFilePopupController = loader.getController<NewFilePopupController>()
+
+        // Pass the current IDEController instance to the NewFilePopupController
+        newFilePopupController.setIDEController(this)
 
 
+        // Create a new stage for the popup
+        val stage = Stage()
+        stage.title = "Create New File"
+        stage.initModality(Modality.APPLICATION_MODAL)  // This makes the popup modal
+        stage.scene = Scene(root)
 
-        var fileName: String = "new file"
-
-        // Check if file name already exists
-        val fileManager = FileManager(dbHelper)
-
-        if(!fileManager.checkFileDuplicate(fileName))
-        {
-            // Check if file name is valid
-            if (fileManager.checkFileNameValid(fileName))
-            {
-
-                println("valid")
+        // Show the popup window
+        stage.showAndWait()
 
 
-                // Format file name
-                print(fileManager.formatFileName(fileName))
-
-                // Create file
-            }
-            else
-            {
-
-            }
-
-
-        }
-        else
-        {
-
-        }
+    }
 
 
 
 
-        // Create new file
-        val file = File(fileName)
+    fun setTextContent(updatedTextContent: String?) {
+        textContent.text = updatedTextContent
+    }
 
-
-        textContent.text = file.getFileContent()
-
-        dbHelper.insertFile(file)
-
-        // Add new file to list view
-        fileList.items?.add(file.getFileName());
-
+    fun addToFileList(newFile: File) {
+        fileList.items?.add(newFile.getFileName());
     }
 }
