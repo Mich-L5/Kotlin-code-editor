@@ -17,11 +17,14 @@ class IDEController : Initializable {
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
-        textContent.text = "Hello World"
+        textContent.text = "No file selected. Create a new file to get started."
     }
 
     @FXML
     fun createNewFile(event: ActionEvent?) {
-        println("button clicked!")
+
+        val file = File()
+        textContent.text = file.getFileContent()
+
     }
 }

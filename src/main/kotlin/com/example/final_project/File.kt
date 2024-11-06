@@ -5,4 +5,8 @@ class File {
     private var fileName: String = "Untitled"
     private var fileContent: String = "This is a new file! Start writing code here!"
 
+    fun getFileContent(): String {
+        return this.fileContent
+    }
+
 }
