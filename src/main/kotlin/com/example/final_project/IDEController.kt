@@ -1,7 +1,6 @@
 package com.example.final_project
 
 import javafx.collections.FXCollections
-import javafx.collections.ObservableList
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
 import javafx.fxml.FXMLLoader
@@ -31,7 +30,10 @@ class IDEController : Initializable {
     @FXML
     private lateinit var fileList: ListView<String>
 
+    @FXML
+    private lateinit var saveBtn: Button
 
+    private lateinit var currentFile: File
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
@@ -52,6 +54,25 @@ class IDEController : Initializable {
         fileList?.items = fileNames
 
         print(fileNames)
+
+
+
+
+
+        // Load file on select
+        fileList.setOnMouseClicked { event ->
+            val selectedItem = fileList.selectionModel.selectedItem
+
+            if (selectedItem != null) {
+
+                currentFile = dbHelper.getFileByName(selectedItem)!!
+                setTextContent(currentFile.getFileContent())
+
+
+            }
+        }
+
+
     }
 
     // On New+ button click event
@@ -83,6 +104,26 @@ class IDEController : Initializable {
 
     }
 
+    // Set current file
+    fun setCurrentFile(updatedCurrentFile: File): File
+    {
+        return updatedCurrentFile
+    }
+
+
+    // Save file
+    @FXML
+    fun saveFile(event: ActionEvent?) {
+
+        val newTextContent = textContent.text
+
+        println(newTextContent)
+
+        currentFile.setFileContent(newTextContent)
+
+        dbHelper.updateFileContent(currentFile.getFileName(), currentFile.getFileContent())
+
+    }
 
 
 

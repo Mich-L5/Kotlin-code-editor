@@ -96,23 +96,55 @@ class DatabaseHelper {
         return files
     }
 
-    // Get a specific file by its ID
-//    fun getFileById(fileId: Int): File? {
-//        val connection = connect()
-//        val selectSQL = "SELECT file_name, file_content FROM files WHERE id = ?"
-//
-//        try {
-//            val preparedStatement = connection?.prepareStatement(selectSQL)
-//            preparedStatement?.setInt(1, fileId)
-//            val resultSet = preparedStatement?.executeQuery()
-//            if (resultSet?.next() == true) {
-//                val fileName = resultSet.getString("file_name")
-//                val fileContent = resultSet.getString("file_content")
-//                return File(fileName, fileContent)
-//            }
-//        } catch (e: SQLException) {
-//            println("Error fetching file: ${e.message}")
-//        }
-//        return null
-//    }
+
+
+
+    // Update file content
+    fun updateFileContent(fileName: String, newFileContent: String) {
+
+        // Connect and create SQL to update file content based on file name
+        val connection = connect()
+        val updateSQL = "UPDATE files SET file_content = ? WHERE file_name = ?"
+
+        try {
+            // Prepare SQL statement
+            val preparedStatement = connection?.prepareStatement(updateSQL)
+            preparedStatement?.setString(1, newFileContent)
+            preparedStatement?.setString(2, fileName)
+
+            // Execute update statement
+            val rowsUpdated = preparedStatement?.executeUpdate()
+
+        } catch (e: SQLException) {
+            println("Error updating file: ${e.message}")
+        }
+    }
+
+
+
+    // Find a file object in the db based on file name
+    fun getFileByName(fileName: String): File? {
+
+        // Connect and create SQL to select file based on file name
+        val connection = connect()
+        val selectSQL = "SELECT file_name, file_content FROM files WHERE file_name = ?"
+
+        try {
+            val preparedStatement = connection?.prepareStatement(selectSQL)
+            preparedStatement?.setString(1, fileName)
+
+            val resultSet = preparedStatement?.executeQuery()
+
+            // If the file is found, return a new File object
+            if (resultSet?.next() == true)
+            {
+                val fileContent = resultSet.getString("file_content")
+                return File(fileName, fileContent)
+            }
+        } catch (e: SQLException) {
+            println("Error fetching file by name: ${e.message}")
+        }
+        // Return null if no file is found
+        return null
+    }
 }

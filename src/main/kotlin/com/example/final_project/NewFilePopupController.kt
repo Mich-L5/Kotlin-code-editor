@@ -52,6 +52,9 @@ class NewFilePopupController {
                 ideController.setTextContent(file.getFileContent())
                 ideController.addToFileList(file)
 
+                // Set new file to current file
+                ideController.setCurrentFile(file)
+
                 // Close window
                 val stage = createFileBtn?.scene?.window as Stage
                 stage.close()
