@@ -58,6 +58,12 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.36.0.3</version> <!-- Use latest version -->
         </dependency>
+
+        <dependency>
+            <groupId>org.fxmisc.richtext</groupId>
+            <artifactId>richtextfx</artifactId>
+            <version>0.10.7</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,0 +1,7 @@
+.pink-text .paragraph-text .text{
+    /*-fx-fill: pink !important;*/
+}
+
+.red-text{
+    -fx-fill: red !important;
+}

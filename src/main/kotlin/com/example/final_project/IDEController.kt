@@ -11,13 +11,17 @@ import javafx.scene.control.ListView
 import javafx.scene.control.TextArea
 import javafx.stage.Modality
 import javafx.stage.Stage
+import org.fxmisc.richtext.CodeArea
+import org.fxmisc.richtext.model.PlainTextChange
+import org.fxmisc.richtext.model.StyleSpan
+import org.fxmisc.richtext.model.StyleSpansBuilder
 import java.net.URL
 import java.util.*
 
 class IDEController : Initializable {
 
     @FXML
-    private lateinit var textContent: TextArea
+    private lateinit var textContent: CodeArea
 
     @FXML
     private lateinit var fileList: ListView<String>
@@ -26,9 +30,59 @@ class IDEController : Initializable {
 
     private val dbHelper = DatabaseHelper()
 
+
+
+
+
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
-        textContent.text = "No file selected. Select a file or create a new file to get started."
+        textContent.replaceText("No file selected. Select a file or create a new file to get started.")
+
+
+
+
+
+
+
+
+
+        textContent.plainTextChanges().subscribe { change: PlainTextChange ->
+
+            val text = textContent.text
+            val styledText = StyleSpansBuilder<Collection<String>>()
+
+            // Regex pattern to match curly braces
+            val bracePattern = "\\{|\\}".toRegex()
+            var lastEnd = 0
+
+            // Find and style curly braces
+            bracePattern.findAll(text).forEach { matchResult ->
+
+                // Apply default style to text between matches
+                styledText.add(emptyList(), matchResult.range.first - lastEnd)
+
+                // Apply red-brace style to the curly brace
+                styledText.add(listOf("red-text"), matchResult.range.last - matchResult.range.first + 1)
+
+                // Update last end position
+                lastEnd = matchResult.range.last + 1
+            }
+
+            // Add remaining text as default style if any
+            styledText.add(emptyList(), text.length - lastEnd)
+
+            // Apply the styled spans to the text area
+            textContent.setStyleSpans(0, styledText.create())
+
+        }
+
+
+
+
+
+
+
+
 
         // Get all existing files and load them into the file list view
         // Get all files from the database
@@ -150,7 +204,7 @@ class IDEController : Initializable {
      * @param updatedTextContent Text to set as the IDE's text content.
      */
     fun setTextContent(updatedTextContent: String?) {
-        textContent.text = updatedTextContent
+        textContent.replaceText(updatedTextContent)
     }
 
     /**
@@ -180,6 +234,6 @@ class IDEController : Initializable {
         // Set the ListView's items to the list of file names
         fileList?.items = fileNames
 
-        textContent.text = "No file selected. Select a file or create a new file to get started."
+        textContent.replaceText("No file selected. Select a file or create a new file to get started.")
     }
 }
