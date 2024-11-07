@@ -11,28 +11,37 @@ import java.net.URL
 import java.util.*
 
 class NewFilePopupController : Initializable {
+
     @FXML
     private lateinit var createFileBtn: Button
 
     @FXML
     private lateinit var fileNameInput: TextField
 
+    @FXML
+    private lateinit var errorMsg: Label
+
     private lateinit var fileName:String
 
     private val dbHelper = DatabaseHelper()
 
-    @FXML
-    private lateinit var errorMsg: Label
-
     private lateinit var ideController: IDEController
 
-    // Method to set the IDEController (this is executed in the IDEController class)
+    /**
+     * Sets the IDEController (this is executed in the IDEController class)
+     *
+     * @param ideController IDE Controller to be set.
+     */
     fun setIDEController(ideController: IDEController) {
         this.ideController = ideController
     }
 
-
-
+    /**
+     * Executes when the Create File button is clicked.
+     *
+     * Creates a new File object using the file name input and saves it to the database. Also displays the new file in the List View in the IDE.
+     *
+     */
     @FXML
     fun createFile(event: ActionEvent?) {
 
@@ -52,30 +61,22 @@ class NewFilePopupController : Initializable {
             {
                 // Create new file
                 val file = File(fileName)
-
                 dbHelper.insertFile(file)
                 ideController.addToFileList(file)
-
-                // Set new file to current file
-                ideController.setCurrentFile(file)
 
                 // Close window
                 val stage = createFileBtn?.scene?.window as Stage
                 stage.close()
-
             }
             else
             {
                 errorMsg.text = "File name already exists. Please try again."
             }
-
         }
         else
         {
             errorMsg.text = "File name must be between 1-30 characters. Please try again."
         }
-
-
     }
 
     override fun initialize(p0: URL?, p1: ResourceBundle?) {
