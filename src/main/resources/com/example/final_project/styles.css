@@ -7,3 +7,18 @@
 {
     -fx-fill: red !important;
 }
+
+.blue-text
+{
+    -fx-fill: blue !important;
+}
+
+.green-text
+{
+    -fx-fill: green !important;
+}
+
+.pink-text
+{
+    -fx-fill: pink !important;
+}
