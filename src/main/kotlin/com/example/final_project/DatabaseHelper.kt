@@ -24,6 +24,7 @@ class DatabaseHelper {
 
             return null
         }
+
     }
 
     // Create a table for storing File objects
@@ -48,6 +49,9 @@ class DatabaseHelper {
         } catch (e: SQLException) {
             println("Error creating table: ${e.message}")
         }
+        finally {
+            connection?.close()
+        }
     }
 
     // Insert a File object into the database
@@ -68,6 +72,9 @@ class DatabaseHelper {
 
         } catch (e: SQLException) {
             println("Error inserting file: ${e.message}")
+        }
+        finally {
+            connection?.close()
         }
     }
 
@@ -92,6 +99,9 @@ class DatabaseHelper {
             }
         } catch (e: SQLException) {
             println("Error fetching files: ${e.message}")
+        }
+        finally {
+            connection?.close()
         }
         return files
     }
@@ -118,6 +128,9 @@ class DatabaseHelper {
         } catch (e: SQLException) {
             println("Error updating file: ${e.message}")
         }
+        finally {
+            connection?.close()
+        }
     }
 
 
@@ -143,6 +156,9 @@ class DatabaseHelper {
             }
         } catch (e: SQLException) {
             println("Error fetching file by name: ${e.message}")
+        }
+        finally {
+            connection?.close()
         }
         // Return null if no file is found
         return null

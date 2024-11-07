@@ -117,8 +117,6 @@ class IDEController : Initializable {
 
         val newTextContent = textContent.text
 
-        println(newTextContent)
-
         currentFile.setFileContent(newTextContent)
 
         dbHelper.updateFileContent(currentFile.getFileName(), currentFile.getFileContent())
