@@ -33,7 +33,10 @@ class IDEController : Initializable {
     @FXML
     private lateinit var saveBtn: Button
 
-    private lateinit var currentFile: File
+    @FXML
+    private lateinit var deleteFileBtn: Button
+
+    private var currentFile: File? = null
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
@@ -53,7 +56,6 @@ class IDEController : Initializable {
         // Set the ListView's items to the list of file names
         fileList?.items = fileNames
 
-        print(fileNames)
 
 
 
@@ -66,7 +68,7 @@ class IDEController : Initializable {
             if (selectedItem != null) {
 
                 currentFile = dbHelper.getFileByName(selectedItem)!!
-                setTextContent(currentFile.getFileContent())
+                setTextContent(currentFile!!.getFileContent())
 
 
             }
@@ -117,11 +119,46 @@ class IDEController : Initializable {
 
         val newTextContent = textContent.text
 
-        currentFile.setFileContent(newTextContent)
+        currentFile?.setFileContent(newTextContent)
 
-        dbHelper.updateFileContent(currentFile.getFileName(), currentFile.getFileContent())
+        currentFile?.let { dbHelper.updateFileContent(it.getFileName(), currentFile!!.getFileContent()) }
+
+
 
     }
+
+    @FXML
+    fun deleteFile(event: ActionEvent?) {
+
+        if (currentFile != null)
+        {
+            // Pop up window to confirm file deletion
+            // Load the FXML for the popup window
+            val loader = FXMLLoader(javaClass.getResource("confirmDelete.fxml"))
+            val root = loader.load<Parent>()
+
+            // Get the ConfirmDeleteController from the loader
+            val confirmDeleteController = loader.getController<ConfirmDeleteController>()
+
+            // Pass the current IDEController instance and the current file to the ConfirmDeleteController
+            confirmDeleteController.setIDEController(this)
+            confirmDeleteController.setFileToDelete(currentFile!!)
+
+
+            // Create a new stage for the popup
+            val stage = Stage()
+            stage.title = "Confirm Delete"
+            stage.initModality(Modality.APPLICATION_MODAL)  // This makes the popup modal
+            stage.scene = Scene(root)
+
+            // Show the popup window
+            stage.showAndWait()
+
+            currentFile = null
+        }
+
+    }
+
 
 
 
@@ -131,5 +168,24 @@ class IDEController : Initializable {
 
     fun addToFileList(newFile: File) {
         fileList.items?.add(newFile.getFileName());
+    }
+
+    fun updateFileList() {
+
+        val files = dbHelper.getAllFiles()
+
+        // Map the list of files to a list of file names (Strings)
+        val fileNames = FXCollections.observableArrayList<String>()
+
+        // Add file names to the ObservableList
+        files.forEach { file ->
+            fileNames.add(file.getFileName())  // Only get the file name
+        }
+
+        // Set the ListView's items to the list of file names
+        fileList?.items = fileNames
+
+        textContent.text = "No file selected. Select a file or create a new file to get started."
+
     }
 }

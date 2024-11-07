@@ -2,12 +2,15 @@ package com.example.final_project
 
 import javafx.event.ActionEvent
 import javafx.fxml.FXML
+import javafx.fxml.Initializable
 import javafx.scene.control.Button
 import javafx.scene.control.Label
 import javafx.scene.control.TextField
 import javafx.stage.Stage
+import java.net.URL
+import java.util.*
 
-class NewFilePopupController {
+class NewFilePopupController : Initializable {
     @FXML
     private lateinit var createFileBtn: Button
 
@@ -27,6 +30,8 @@ class NewFilePopupController {
     fun setIDEController(ideController: IDEController) {
         this.ideController = ideController
     }
+
+
 
     @FXML
     fun createFile(event: ActionEvent?) {
@@ -49,7 +54,6 @@ class NewFilePopupController {
                 val file = File(fileName)
 
                 dbHelper.insertFile(file)
-                ideController.setTextContent(file.getFileContent())
                 ideController.addToFileList(file)
 
                 // Set new file to current file
@@ -72,5 +76,9 @@ class NewFilePopupController {
         }
 
 
+    }
+
+    override fun initialize(p0: URL?, p1: ResourceBundle?) {
+        errorMsg.text = ""
     }
 }

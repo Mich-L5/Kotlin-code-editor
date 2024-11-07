@@ -163,4 +163,26 @@ class DatabaseHelper {
         // Return null if no file is found
         return null
     }
+
+    // Delete file
+    fun deleteFile(fileName: String) {
+
+        // Connect and create SQL to delete the file based on file name
+        val connection = connect()
+        val deleteSQL = "DELETE FROM files WHERE file_name = ?"
+
+        try {
+            // Prepare the SQL statement
+            val preparedStatement = connection?.prepareStatement(deleteSQL)
+            preparedStatement?.setString(1, fileName)
+
+            // Execute the delete statement
+            val rowsDeleted = preparedStatement?.executeUpdate()
+
+        } catch (e: SQLException) {
+            println("Error deleting file: ${e.message}")
+        } finally {
+            connection?.close()
+        }
+    }
 }
