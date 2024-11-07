@@ -16,10 +16,15 @@ class SyntaxHighlight {
 
         // The RegEx patterns to be colored
         val patterns = mapOf(
-            "\\{|\\}" to "red-text", // Curly braces
-            "\\bfun\\b" to "blue-text", // 'fun' keyword
-            ";" to "green-text", // Semicolons
-            "\\d+" to "pink-text" // Numeric values
+            "\\{|\\}" to "text-color-1", // Curly braces
+            "\\bfun\\b" to "text-color-2", // fun keyword
+            "(?<![A-Za-z0-9'\"\\-])\\b\\d+\\b(?![A-Za-z0-9'\"\\-])" to "text-color-3", // Numeric values
+            "\\b(if|elseif|else)\\b" to "text-color-4", // if, elseif, else
+            "\\breturn\\b" to "text-color-5", // return
+            "(['\"]).*?\\1" to "text-color-6", // Strings
+            "\\b(Int|Long|Double|Float|Boolean|Char|String|Byte|Short|Array|List|Set|Map|Any|Unit|Nothing)\\b" to "text-color-7", // Common data types
+            "<([^>]+)>" to "text-color-8", // Angled braces
+            "//.*|/\\*[\\s\\S]*?\\*/" to "text-color-9" // Comments
         )
 
         // Initialize the collection of styles
@@ -34,10 +39,20 @@ class SyntaxHighlight {
         }.sortedBy { it.first.range.first } // Sort in order of occurrence
 
         // Apply styles to matches in order
-        for ((matchResult, styleClass) in matches)
-        {
+        for ((matchResult, styleClass) in matches) {
+            // Ensure lastEnd is up-to-date before processing each match
+            if (matchResult.range.first < lastEnd) {
+                // This can happen if matches are unordered or overlapping
+                continue // Skip this match
+            }
+
             // Add default (no) style to text between matches
-            styledText.add(emptyList(), matchResult.range.first - lastEnd)
+            val length = matchResult.range.first - lastEnd
+//            if (length < 0) {
+//                println("Warning: Negative length detected, skipping this match")
+//                continue
+//            }
+            styledText.add(emptyList(), length)
 
             // Apply specific style to matched pattern
             styledText.add(listOf(styleClass), matchResult.range.last - matchResult.range.first + 1)

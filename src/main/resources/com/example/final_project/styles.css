@@ -1,24 +1,59 @@
-/*.black-text .paragraph-text .text
-{*/
-/*    -fx-fill: black !important;*/
-/*}*/
-
-.red-text
+.paragraph-text .text
 {
-    -fx-fill: red !important;
+    /*-fx-fill: black !important;*/
+    /*-fx-font-weight: bold;*/
 }
 
-.blue-text
+/* Syntax highlighting */
+.text-color-1
 {
-    -fx-fill: blue !important;
+    -fx-fill: #0000ff !important;
+    -fx-font-weight: bold;
 }
 
-.green-text
+.text-color-2
 {
-    -fx-fill: green !important;
+    -fx-fill: #16b9ff !important;
+    -fx-font-weight: bold;
 }
 
-.pink-text
+.text-color-3
 {
-    -fx-fill: pink !important;
+    -fx-fill: #63be06 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4
+{
+    -fx-fill: #f5619d !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5
+{
+    -fx-fill: #f8c600 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6
+{
+    -fx-fill: #be35e2 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7
+{
+    -fx-fill: #1fdcc1 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8
+{
+    -fx-fill: #ff8549 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9
+{
+    -fx-fill: #9d9d9d !important;
 }
