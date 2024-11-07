@@ -7,16 +7,15 @@ import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.control.ChoiceBox
 import javafx.scene.control.ListView
-import javafx.scene.control.TextArea
 import javafx.stage.Modality
 import javafx.stage.Stage
 import org.fxmisc.richtext.CodeArea
 import org.fxmisc.richtext.model.PlainTextChange
-import org.fxmisc.richtext.model.StyleSpan
-import org.fxmisc.richtext.model.StyleSpansBuilder
 import java.net.URL
 import java.util.*
+
 
 class IDEController : Initializable {
 
@@ -26,6 +25,9 @@ class IDEController : Initializable {
     @FXML
     private lateinit var fileList: ListView<String>
 
+    @FXML
+    private lateinit var themePicker: ChoiceBox<String>
+
     private var currentFile: File? = null
 
     private val dbHelper = DatabaseHelper()
@@ -34,6 +36,10 @@ class IDEController : Initializable {
 
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
+
+        // Add theme options & default value
+        themePicker.items?.addAll("Light", "Dark")
+        themePicker.value = "Light"
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
 
