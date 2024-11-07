@@ -30,59 +30,22 @@ class IDEController : Initializable {
 
     private val dbHelper = DatabaseHelper()
 
-
-
+    private val syntaxHighlight = SyntaxHighlight()
 
 
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
 
-
-
-
-
-
-
-
-
+        // Event listener for code area
         textContent.plainTextChanges().subscribe { change: PlainTextChange ->
 
-            val text = textContent.text
-            val styledText = StyleSpansBuilder<Collection<String>>()
+            // Create highlight styles
+            val styledSpans = syntaxHighlight.applyHighlight(textContent.text)
 
-            // Regex pattern to match curly braces
-            val bracePattern = "\\{|\\}".toRegex()
-            var lastEnd = 0
-
-            // Find and style curly braces
-            bracePattern.findAll(text).forEach { matchResult ->
-
-                // Apply default style to text between matches
-                styledText.add(emptyList(), matchResult.range.first - lastEnd)
-
-                // Apply red-brace style to the curly brace
-                styledText.add(listOf("red-text"), matchResult.range.last - matchResult.range.first + 1)
-
-                // Update last end position
-                lastEnd = matchResult.range.last + 1
-            }
-
-            // Add remaining text as default style if any
-            styledText.add(emptyList(), text.length - lastEnd)
-
-            // Apply the styled spans to the text area
-            textContent.setStyleSpans(0, styledText.create())
-
+            // Apply highlight styles
+            textContent.setStyleSpans(0, styledSpans)
         }
-
-
-
-
-
-
-
-
 
         // Get all existing files and load them into the file list view
         // Get all files from the database

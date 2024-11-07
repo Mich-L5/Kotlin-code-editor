@@ -1,7 +1,9 @@
-.pink-text .paragraph-text .text{
-    /*-fx-fill: pink !important;*/
-}
+/*.black-text .paragraph-text .text
+{*/
+/*    -fx-fill: black !important;*/
+/*}*/
 
-.red-text{
+.red-text
+{
     -fx-fill: red !important;
 }
