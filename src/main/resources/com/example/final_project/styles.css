@@ -216,6 +216,11 @@
     -fx-mark-color: #cecece;
 }
 
+.choice-box-style-dark:hover
+{
+    -fx-background-color: #5b5b5b;
+}
+
 .choice-box-style-dark .label {
     -fx-text-fill: #cecece;
 }
@@ -319,7 +324,7 @@
 
 .sidebar-bg-neon .list-cell:odd
 {
-    -fx-background-color: #211e21;
+    -fx-background-color: #1c191c;
     -fx-text-fill: #cecece;
 }
 
@@ -332,29 +337,34 @@
 
 .btn-style-neon
 {
-    -fx-background-color: #484848;
-    -fx-text-fill: #cecece;
+    -fx-background-color: #00ffff;
+    -fx-text-fill: #000000;
 }
 
 .btn-style-neon:hover
 {
-    -fx-background-color: #5b5b5b;
+    -fx-background-color: #02f3f3;
 }
 
 .choice-box-style-neon
 {
-    -fx-background-color: #484848;
-    -fx-mark-color: #cecece;
+    -fx-background-color: #ff00fc;
+    -fx-mark-color: #f1f1f1;
+}
+
+.choice-box-style-neon:hover
+{
+    -fx-background-color: #f655f5;
 }
 
 .choice-box-style-neon .label {
-    -fx-text-fill: #cecece;
+    -fx-text-fill: #f1f1f1;
 }
 
 .choice-box-style-neon .context-menu {
-    -fx-background-color: #484848;
+    -fx-background-color: #ff00fc;
 }
 
 .choice-box-style-neon .menu-item:focused {
-    -fx-background-color: #5b5b5b;
+    -fx-background-color: #f655f5;
 }
