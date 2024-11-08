@@ -9,6 +9,7 @@ import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.control.ChoiceBox
 import javafx.scene.control.ListView
+import javafx.scene.layout.AnchorPane
 import javafx.stage.Modality
 import javafx.stage.Stage
 import org.fxmisc.richtext.CodeArea
@@ -18,6 +19,9 @@ import java.util.*
 
 
 class IDEController : Initializable {
+
+    @FXML
+    private lateinit var anchorPane: AnchorPane
 
     @FXML
     lateinit var textContent: CodeArea
@@ -34,23 +38,29 @@ class IDEController : Initializable {
 
     private val syntaxHighlight = SyntaxHighlight()
 
-
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
         // Add theme options & default value
         themePicker.items?.addAll("Light", "Dark")
         themePicker.value = "Light"
 
+        // Apply initial (Light) theme to GUI elements
+        addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
+
         themePicker.valueProperty().addListener { _, oldValue, newValue ->
+
+            // Remove previous GUI theme
+            removeThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
+
             if(newValue == "Light")
             {
-                // Apply light theme
-                Theme.setNewTheme("text-color-1", "text-color-2","text-color-3","text-color-4","text-color-5","text-color-6","text-color-7","text-color-8","text-color-9")
+                // Set light theme
+                Theme.setNewTheme("text-color-1", "text-color-2","text-color-3","text-color-4","text-color-5","text-color-6","text-color-7","text-color-8","text-color-9", "bg", "editor-bg", "sidebar-bg")
             }
             else if (newValue == "Dark")
             {
-                // Apply dark theme
-                Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark")
+                // Set dark theme
+                Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark", "bg-dark", "editor-bg-dark", "sidebar-bg-dark")
             }
             // More themes can be added
 
@@ -59,6 +69,9 @@ class IDEController : Initializable {
 
             // Apply highlight styles
             textContent.setStyleSpans(0, styledSpans)
+
+            // Apply theme to GUI elements
+            addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
         }
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
@@ -96,6 +109,12 @@ class IDEController : Initializable {
             if (selectedItem != null) {
                 currentFile = dbHelper.getFileByName(selectedItem)!!
                 setTextContent(currentFile!!.getFileContent())
+
+                // Create highlight styles
+                val styledSpans = syntaxHighlight.applyHighlight(textContent.text)
+
+                // Apply highlight styles
+                textContent.setStyleSpans(0, styledSpans)
             }
 
             textContent.isEditable = true
@@ -227,4 +246,19 @@ class IDEController : Initializable {
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
     }
+
+    fun addThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String)
+    {
+        anchorPane.styleClass.add(anchorPaneBg)
+        textContent.styleClass.add(editorBg)
+        fileList.styleClass.add(fileListBg)
+    }
+
+    fun removeThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String)
+    {
+        anchorPane.styleClass.remove(anchorPaneBg)
+        textContent.styleClass.remove(editorBg)
+        fileList.styleClass.remove(fileListBg)
+    }
+
 }

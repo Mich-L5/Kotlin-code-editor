@@ -11,6 +11,9 @@ object Theme
     var dataTypes: String = "text-color-7"
     var angledBraces: String = "text-color-8"
     var comments: String = "text-color-9"
+    var anchorBg: String = "bg"
+    var editorBg: String = "editor-bg"
+    var sidebarBg: String = "sidebar-bg"
 
     /**
      * Sets a new theme for the IDE.
@@ -24,9 +27,12 @@ object Theme
      * @param dataTypesColor The font color for data type keywords.
      * @param angledBracesColor The font color for angles braces and their content.
      * @param commentsColor The font color for comments.
+     * @param anchorBgColor The background color of the anchor pane.
+     * @param editorBgColor The background color of the text editor.
+     * @param sidebarBgColor The background color of the sidebar.
      *
      */
-    fun setNewTheme(curlyBracesColor: String, funKeywordColor: String, numbersColor: String, conditionalsColor: String, returnKeywordColor: String, stringsColor: String, dataTypesColor: String, angledBracesColor: String, commentsColor: String)
+    fun setNewTheme(curlyBracesColor: String, funKeywordColor: String, numbersColor: String, conditionalsColor: String, returnKeywordColor: String, stringsColor: String, dataTypesColor: String, angledBracesColor: String, commentsColor: String, anchorBgColor: String, editorBgColor: String, sidebarBgColor: String)
     {
         this.curlyBraces = curlyBracesColor
         this.funKeyword = funKeywordColor
@@ -37,6 +43,9 @@ object Theme
         this.dataTypes = dataTypesColor
         this.angledBraces = angledBracesColor
         this.comments = commentsColor
+        this.anchorBg = anchorBgColor
+        this.editorBg = editorBgColor
+        this.sidebarBg = sidebarBgColor
     }
 
 }

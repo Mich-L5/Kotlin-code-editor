@@ -4,7 +4,7 @@
     /*-fx-font-weight: bold;*/
 }
 
-/* Syntax highlighting - Light theme */
+/* Light theme */
 .text-color-1
 {
     -fx-fill: #0000ff !important;
@@ -58,8 +58,39 @@
     -fx-fill: #9d9d9d !important;
 }
 
+.bg
+{
+    -fx-background-color: #f4f4f4;
+}
 
-/* Syntax highlighting - Dark theme */
+.editor-bg
+{
+    -fx-background-color: white;
+}
+
+.sidebar-bg
+{
+    -fx-border-color: #16b9ff;
+}
+
+.sidebar-bg .list-cell:even
+{
+    -fx-background-color: white;
+}
+
+.sidebar-bg .list-cell:odd
+{
+    -fx-background-color: #f9f9f9;
+}
+
+.sidebar-bg .list-cell:selected
+{
+    -fx-background-color: #16b9ff;
+    -fx-text-fill: white;
+}
+
+
+/* Dark theme */
 .text-color-1-dark
 {
     -fx-fill: #fff983 !important;
@@ -112,3 +143,49 @@
 {
     -fx-fill: #9d9d9d !important;
 }
+
+.bg-dark
+{
+    -fx-background-color: #171717;
+}
+
+.editor-bg-dark
+{
+    -fx-background-color: #272727;
+}
+
+.editor-bg-dark .paragraph-text .text
+{
+    -fx-fill: #e8e8e8;
+
+}
+
+.editor-bg-dark .paragraph-text .caret
+{
+    -fx-stroke: #cecece;
+}
+
+.sidebar-bg-dark
+{
+    -fx-border-color: #d8d292;
+}
+
+.sidebar-bg-dark .list-cell:even
+{
+    -fx-background-color: #202020;
+    -fx-text-fill: #cecece;
+}
+
+.sidebar-bg-dark .list-cell:odd
+{
+    -fx-background-color: #252525;
+    -fx-text-fill: #cecece;
+}
+
+.sidebar-bg-dark .list-cell:selected
+{
+    -fx-background-color: #d8d292;
+    -fx-text-fill: black;
+}
+
+
