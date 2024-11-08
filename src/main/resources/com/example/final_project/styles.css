@@ -89,6 +89,15 @@
     -fx-text-fill: white;
 }
 
+.btn-style
+{
+    /* No styles applied yet */
+}
+
+.choice-box-style
+{
+    /* No styles applied yet */
+}
 
 /* Dark theme */
 .text-color-1-dark
@@ -146,7 +155,7 @@
 
 .bg-dark
 {
-    -fx-background-color: #171717;
+    -fx-background-color: #191919;
 }
 
 .editor-bg-dark
@@ -168,6 +177,7 @@
 .sidebar-bg-dark
 {
     -fx-border-color: #d8d292;
+    -fx-border-width: 0.5px;
 }
 
 .sidebar-bg-dark .list-cell:even
@@ -188,4 +198,32 @@
     -fx-text-fill: black;
 }
 
+.btn-style-dark
+{
+    -fx-background-color: #484848;
+    -fx-text-fill: #cecece;
+}
+
+.btn-style-dark:hover
+{
+    -fx-background-color: #5b5b5b;
+}
+
+.choice-box-style-dark
+{
+    -fx-background-color: #484848;
+    -fx-mark-color: #cecece;
+}
+
+.choice-box-style-dark .label {
+    -fx-text-fill: #cecece;
+}
+
+.choice-box-style-dark .context-menu {
+    -fx-background-color: #484848;
+}
+
+.choice-box-style-dark .menu-item:focused {
+    -fx-background-color: #5b5b5b;
+}
 

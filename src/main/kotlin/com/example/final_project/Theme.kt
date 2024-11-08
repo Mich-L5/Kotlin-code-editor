@@ -14,6 +14,8 @@ object Theme
     var anchorBg: String = "bg"
     var editorBg: String = "editor-bg"
     var sidebarBg: String = "sidebar-bg"
+    var btn: String = "btn-style"
+    var choiceBox: String = "choice-box-style"
 
     /**
      * Sets a new theme for the IDE.
@@ -30,9 +32,11 @@ object Theme
      * @param anchorBgColor The background color of the anchor pane.
      * @param editorBgColor The background color of the text editor.
      * @param sidebarBgColor The background color of the sidebar.
+     * @param btn The color of the buttons.
+     * @param choiceBox The color of the choice box.
      *
      */
-    fun setNewTheme(curlyBracesColor: String, funKeywordColor: String, numbersColor: String, conditionalsColor: String, returnKeywordColor: String, stringsColor: String, dataTypesColor: String, angledBracesColor: String, commentsColor: String, anchorBgColor: String, editorBgColor: String, sidebarBgColor: String)
+    fun setNewTheme(curlyBracesColor: String, funKeywordColor: String, numbersColor: String, conditionalsColor: String, returnKeywordColor: String, stringsColor: String, dataTypesColor: String, angledBracesColor: String, commentsColor: String, anchorBgColor: String, editorBgColor: String, sidebarBgColor: String, btnColor: String, choiceBoxColor: String)
     {
         this.curlyBraces = curlyBracesColor
         this.funKeyword = funKeywordColor
@@ -46,6 +50,8 @@ object Theme
         this.anchorBg = anchorBgColor
         this.editorBg = editorBgColor
         this.sidebarBg = sidebarBgColor
+        this.btn = btnColor
+        this.choiceBox = choiceBoxColor
     }
 
 }

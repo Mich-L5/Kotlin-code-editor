@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader
 import javafx.fxml.Initializable
 import javafx.scene.Parent
 import javafx.scene.Scene
+import javafx.scene.control.Button
 import javafx.scene.control.ChoiceBox
 import javafx.scene.control.ListView
 import javafx.scene.layout.AnchorPane
@@ -30,6 +31,15 @@ class IDEController : Initializable {
     private lateinit var fileList: ListView<String>
 
     @FXML
+    private lateinit var deleteFileBtn: Button
+
+    @FXML
+    private lateinit var newFileBtn: Button
+
+    @FXML
+    private lateinit var saveBtn: Button
+
+    @FXML
     private lateinit var themePicker: ChoiceBox<String>
 
     var currentFile: File? = null
@@ -45,22 +55,22 @@ class IDEController : Initializable {
         themePicker.value = "Light"
 
         // Apply initial (Light) theme to GUI elements
-        addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
+        addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg, Theme.btn, Theme.choiceBox)
 
         themePicker.valueProperty().addListener { _, oldValue, newValue ->
 
             // Remove previous GUI theme
-            removeThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
+            removeThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg, Theme.btn, Theme.choiceBox)
 
             if(newValue == "Light")
             {
                 // Set light theme
-                Theme.setNewTheme("text-color-1", "text-color-2","text-color-3","text-color-4","text-color-5","text-color-6","text-color-7","text-color-8","text-color-9", "bg", "editor-bg", "sidebar-bg")
+                Theme.setNewTheme("text-color-1", "text-color-2","text-color-3","text-color-4","text-color-5","text-color-6","text-color-7","text-color-8","text-color-9", "bg", "editor-bg", "sidebar-bg", "btn-style", "choice-box-style")
             }
             else if (newValue == "Dark")
             {
                 // Set dark theme
-                Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark", "bg-dark", "editor-bg-dark", "sidebar-bg-dark")
+                Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark", "bg-dark", "editor-bg-dark", "sidebar-bg-dark", "btn-style-dark", "choice-box-style-dark")
             }
             // More themes can be added
 
@@ -71,7 +81,7 @@ class IDEController : Initializable {
             textContent.setStyleSpans(0, styledSpans)
 
             // Apply theme to GUI elements
-            addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg)
+            addThemeGUI(Theme.anchorBg, Theme.editorBg, Theme.sidebarBg, Theme.btn, Theme.choiceBox)
         }
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
@@ -247,18 +257,26 @@ class IDEController : Initializable {
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
     }
 
-    fun addThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String)
+    fun addThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String, btn: String, choiceBoxStyle: String)
     {
         anchorPane.styleClass.add(anchorPaneBg)
         textContent.styleClass.add(editorBg)
         fileList.styleClass.add(fileListBg)
+        saveBtn.styleClass.add(btn)
+        deleteFileBtn.styleClass.add(btn)
+        newFileBtn.styleClass.add(btn)
+        themePicker.styleClass.add(choiceBoxStyle)
     }
 
-    fun removeThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String)
+    fun removeThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String, btn: String, choiceBoxStyle: String)
     {
         anchorPane.styleClass.remove(anchorPaneBg)
         textContent.styleClass.remove(editorBg)
         fileList.styleClass.remove(fileListBg)
+        saveBtn.styleClass.remove(btn)
+        deleteFileBtn.styleClass.remove(btn)
+        newFileBtn.styleClass.remove(btn)
+        themePicker.styleClass.remove(choiceBoxStyle)
     }
 
 }
