@@ -51,7 +51,7 @@ class IDEController : Initializable {
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
         // Add theme options & default value
-        themePicker.items?.addAll("Light", "Dark")
+        themePicker.items?.addAll("Light", "Dark", "Neon")
         themePicker.value = "Light"
 
         // Apply initial (Light) theme to GUI elements
@@ -71,6 +71,11 @@ class IDEController : Initializable {
             {
                 // Set dark theme
                 Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark", "bg-dark", "editor-bg-dark", "sidebar-bg-dark", "btn-style-dark", "choice-box-style-dark")
+            }
+            else if (newValue == "Neon")
+            {
+                // Set dark theme
+                Theme.setNewTheme("text-color-1-neon", "text-color-2-neon","text-color-3-neon","text-color-4-neon","text-color-5-neon","text-color-6-neon","text-color-7-neon","text-color-8-neon","text-color-9-neon", "bg-neon", "editor-bg-neon", "sidebar-bg-neon", "btn-style-neon", "choice-box-style-neon")
             }
             // More themes can be added
 

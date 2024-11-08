@@ -228,3 +228,133 @@
     -fx-background-color: #5b5b5b;
 }
 
+
+
+/* Neon theme */
+.text-color-1-neon
+{
+    -fx-fill: #48ff00 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-2-neon
+{
+    -fx-fill: #52c2ea !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-3-neon
+{
+    -fx-fill: #d7b1ea !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4-neon
+{
+    -fx-fill: #bd70e3 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5-neon
+{
+    -fx-fill: #f6d963 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6-neon
+{
+    -fx-fill: #edbf9b !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7-neon
+{
+    -fx-fill: #88b2e8 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8-neon
+{
+    -fx-fill: #ef6c2b !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9-neon
+{
+    -fx-fill: #949494 !important;
+}
+
+.bg-neon
+{
+    -fx-background-color: #120415;
+}
+
+.editor-bg-neon
+{
+    -fx-background-color: #211e21;
+}
+
+.editor-bg-neon .paragraph-text .text
+{
+    -fx-fill: #e8e8e8;
+
+}
+
+.editor-bg-neon .paragraph-text .caret
+{
+    -fx-stroke: #cecece;
+}
+
+.sidebar-bg-neon
+{
+    -fx-border-color: #48ff00;
+
+}
+
+.sidebar-bg-neon .list-cell:even
+{
+    -fx-background-color: #120415;
+    -fx-text-fill: #cecece;
+}
+
+.sidebar-bg-neon .list-cell:odd
+{
+    -fx-background-color: #211e21;
+    -fx-text-fill: #cecece;
+}
+
+.sidebar-bg-neon .list-cell:selected
+{
+    -fx-background-color: #48ff00;
+    -fx-text-fill: black;
+}
+
+
+.btn-style-neon
+{
+    -fx-background-color: #484848;
+    -fx-text-fill: #cecece;
+}
+
+.btn-style-neon:hover
+{
+    -fx-background-color: #5b5b5b;
+}
+
+.choice-box-style-neon
+{
+    -fx-background-color: #484848;
+    -fx-mark-color: #cecece;
+}
+
+.choice-box-style-neon .label {
+    -fx-text-fill: #cecece;
+}
+
+.choice-box-style-neon .context-menu {
+    -fx-background-color: #484848;
+}
+
+.choice-box-style-neon .menu-item:focused {
+    -fx-background-color: #5b5b5b;
+}
