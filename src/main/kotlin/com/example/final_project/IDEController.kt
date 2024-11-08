@@ -186,6 +186,9 @@ class IDEController : Initializable {
         saveCurrentFile()
     }
 
+    /**
+     * Saves (updates) the current open file's text content to the database.
+     */
     private fun saveCurrentFile()
     {
         val newTextContent = textContent.text
@@ -267,6 +270,15 @@ class IDEController : Initializable {
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
     }
 
+    /**
+     * Applies theme settings to the GUI.
+     *
+     * @param anchorPaneBg The anchor pane background color to set.
+     * @param editorBg The code editor background color to set.
+     * @param FileListBg The file list background color to set.
+     * @param btn The button color to set.
+     * @param choiceBoxStyle The choice box styles to set.
+     */
     fun addThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String, btn: String, choiceBoxStyle: String)
     {
         anchorPane.styleClass.add(anchorPaneBg)
@@ -278,6 +290,16 @@ class IDEController : Initializable {
         themePicker.styleClass.add(choiceBoxStyle)
     }
 
+
+    /**
+     * Removes theme settings from the GUI.
+     *
+     * @param anchorPaneBg The anchor pane background color to unset.
+     * @param editorBg The code editor background color to unset.
+     * @param FileListBg The file list background color to unset.
+     * @param btn The button color to unset.
+     * @param choiceBoxStyle The choice box styles to unset.
+     */
     fun removeThemeGUI(anchorPaneBg: String, editorBg: String, fileListBg: String, btn: String, choiceBoxStyle: String)
     {
         anchorPane.styleClass.remove(anchorPaneBg)
