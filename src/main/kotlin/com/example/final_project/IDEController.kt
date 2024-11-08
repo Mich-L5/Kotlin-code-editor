@@ -42,7 +42,23 @@ class IDEController : Initializable {
         themePicker.value = "Light"
 
         themePicker.valueProperty().addListener { _, oldValue, newValue ->
-            println("Theme changed from $oldValue to $newValue")
+            if(newValue == "Light")
+            {
+                // Apply light theme
+                Theme.setNewTheme("text-color-1", "text-color-2","text-color-3","text-color-4","text-color-5","text-color-6","text-color-7","text-color-8","text-color-9")
+            }
+            else if (newValue == "Dark")
+            {
+                // Apply dark theme
+                Theme.setNewTheme("text-color-1-dark", "text-color-2-dark","text-color-3-dark","text-color-4-dark","text-color-5-dark","text-color-6-dark","text-color-7-dark","text-color-8-dark","text-color-9-dark")
+            }
+            // More themes can be added
+
+            // Create highlight styles
+            val styledSpans = syntaxHighlight.applyHighlight(textContent.text)
+
+            // Apply highlight styles
+            textContent.setStyleSpans(0, styledSpans)
         }
 
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")

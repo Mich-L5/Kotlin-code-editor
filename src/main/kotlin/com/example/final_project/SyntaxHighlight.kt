@@ -16,14 +16,14 @@ class SyntaxHighlight {
 
         // The RegEx patterns to be colored
         val patterns = mapOf(
-            "\\{|\\}" to "text-color-1", // Curly braces
+            "\\{|\\}" to Theme.curlyBraces, // Curly braces
             "\\bfun\\b" to "text-color-2", // fun keyword
             "(?<![A-Za-z0-9'\"\\-])\\b\\d+\\b(?![A-Za-z0-9'\"\\-])" to "text-color-3", // Numeric values
-            "\\b(if|elseif|else)\\b" to "text-color-4", // if, elseif, else
+            "\\b(if|else if|else)\\b" to "text-color-4", // if, else if, else
             "\\breturn\\b" to "text-color-5", // return
             "(['\"]).*?\\1" to "text-color-6", // Strings
             "\\b(Int|Long|Double|Float|Boolean|Char|String|Byte|Short|Array|List|Set|Map|Any|Unit|Nothing)\\b" to "text-color-7", // Common data types
-            "<([^>]+)>" to "text-color-8", // Angled braces
+            "<([^>]+)>" to "text-color-8", // Angled braces with content inside
             "//.*|/\\*[\\s\\S]*?\\*/" to "text-color-9" // Comments
         )
 
