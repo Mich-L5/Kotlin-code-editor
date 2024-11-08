@@ -17,14 +17,14 @@ class SyntaxHighlight {
         // The RegEx patterns to be colored
         val patterns = mapOf(
             "\\{|\\}" to Theme.curlyBraces, // Curly braces
-            "\\bfun\\b" to "text-color-2", // fun keyword
-            "(?<![A-Za-z0-9'\"\\-])\\b\\d+\\b(?![A-Za-z0-9'\"\\-])" to "text-color-3", // Numeric values
-            "\\b(if|else if|else)\\b" to "text-color-4", // if, else if, else
-            "\\breturn\\b" to "text-color-5", // return
-            "(['\"]).*?\\1" to "text-color-6", // Strings
-            "\\b(Int|Long|Double|Float|Boolean|Char|String|Byte|Short|Array|List|Set|Map|Any|Unit|Nothing)\\b" to "text-color-7", // Common data types
-            "<([^>]+)>" to "text-color-8", // Angled braces with content inside
-            "//.*|/\\*[\\s\\S]*?\\*/" to "text-color-9" // Comments
+            "\\bfun\\b" to Theme.funKeyword, // fun keyword
+            "(?<![A-Za-z0-9'\"\\-])\\b\\d+\\b(?![A-Za-z0-9'\"\\-])" to Theme.numbers, // Numeric values
+            "\\b(if|else if|else)\\b" to Theme.conditionals, // if, else if, else
+            "\\breturn\\b" to Theme.returnKeyword, // return
+            "(['\"]).*?\\1" to Theme.strings, // Strings
+            "\\b(Int|Long|Double|Float|Boolean|Char|String|Byte|Short|Array|List|Set|Map|Any|Unit|Nothing)\\b" to Theme.dataTypes, // Common data types
+            "<([^>]+)>" to Theme.angledBraces, // Angled braces with content inside
+            "//.*|/\\*[\\s\\S]*?\\*/" to Theme.comments // Comments
         )
 
         // Initialize the collection of styles

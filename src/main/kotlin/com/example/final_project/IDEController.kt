@@ -114,6 +114,10 @@ class IDEController : Initializable {
 
         // Load file on select click handler
         fileList.setOnMouseClicked { event ->
+
+            // Save current file changes
+            saveCurrentFile()
+
             val selectedItem = fileList.selectionModel.selectedItem
 
             if (selectedItem != null) {
@@ -179,9 +183,15 @@ class IDEController : Initializable {
     @FXML
     fun saveFile(event: ActionEvent?) {
 
+        saveCurrentFile()
+    }
+
+    private fun saveCurrentFile()
+    {
         val newTextContent = textContent.text
         currentFile?.setFileContent(newTextContent)
         currentFile?.let { dbHelper.updateFileContent(it.getFileName(), currentFile!!.getFileContent()) }
+
     }
 
     /**

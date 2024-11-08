@@ -108,49 +108,49 @@
 
 .text-color-2-dark
 {
-    -fx-fill: #16b9ff !important;
+    -fx-fill: #52c2ea !important;
     -fx-font-weight: bold;
 }
 
 .text-color-3-dark
 {
-    -fx-fill: #63be06 !important;
+    -fx-fill: #d7b1ea !important;
     -fx-font-weight: bold;
 }
 
 .text-color-4-dark
 {
-    -fx-fill: #f5619d !important;
+    -fx-fill: #bd70e3 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-5-dark
 {
-    -fx-fill: #f8c600 !important;
+    -fx-fill: #f6d963 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-6-dark
 {
-    -fx-fill: #be35e2 !important;
+    -fx-fill: #edbf9b !important;
     -fx-font-weight: bold;
 }
 
 .text-color-7-dark
 {
-    -fx-fill: #1fdcc1 !important;
+    -fx-fill: #88b2e8 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-8-dark
 {
-    -fx-fill: #ff8549 !important;
+    -fx-fill: #ef6c2b !important;
     -fx-font-weight: bold;
 }
 
 .text-color-9-dark
 {
-    -fx-fill: #9d9d9d !important;
+    -fx-fill: #949494 !important;
 }
 
 .bg-dark
@@ -177,7 +177,7 @@
 .sidebar-bg-dark
 {
     -fx-border-color: #d8d292;
-    -fx-border-width: 0.5px;
+
 }
 
 .sidebar-bg-dark .list-cell:even
@@ -197,6 +197,7 @@
     -fx-background-color: #d8d292;
     -fx-text-fill: black;
 }
+
 
 .btn-style-dark
 {
