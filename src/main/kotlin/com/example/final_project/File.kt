@@ -1,6 +1,6 @@
 package com.example.final_project
 
-class File(private var fileName: String, private var fileContent: String = "This is a new file! Start writing code here!") {
+class File(private var fileName: String, private var fileContent: String = "// This is a new file! Start writing code here!") {
 
     /**
      * Returns the file's content.

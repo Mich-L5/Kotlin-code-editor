@@ -20,7 +20,7 @@ import java.util.*
 class IDEController : Initializable {
 
     @FXML
-    private lateinit var textContent: CodeArea
+    lateinit var textContent: CodeArea
 
     @FXML
     private lateinit var fileList: ListView<String>
@@ -28,7 +28,7 @@ class IDEController : Initializable {
     @FXML
     private lateinit var themePicker: ChoiceBox<String>
 
-    private var currentFile: File? = null
+    var currentFile: File? = null
 
     private val dbHelper = DatabaseHelper()
 
@@ -41,7 +41,12 @@ class IDEController : Initializable {
         themePicker.items?.addAll("Light", "Dark")
         themePicker.value = "Light"
 
+        themePicker.valueProperty().addListener { _, oldValue, newValue ->
+            println("Theme changed from $oldValue to $newValue")
+        }
+
         textContent.replaceText("No file selected. Select a file or create a new file to get started.")
+        textContent.isEditable = false
 
         // Event listener for code area
         textContent.plainTextChanges().subscribe { change: PlainTextChange ->
@@ -76,6 +81,8 @@ class IDEController : Initializable {
                 currentFile = dbHelper.getFileByName(selectedItem)!!
                 setTextContent(currentFile!!.getFileContent())
             }
+
+            textContent.isEditable = true
         }
     }
 
@@ -163,7 +170,6 @@ class IDEController : Initializable {
             // Show the popup window
             stage.showAndWait()
 
-            currentFile = null
         }
     }
 

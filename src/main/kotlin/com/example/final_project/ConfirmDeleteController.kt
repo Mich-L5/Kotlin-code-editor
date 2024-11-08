@@ -45,6 +45,9 @@ class ConfirmDeleteController {
         dbHelper.deleteFile(fileToDelete.getFileName())
         ideController.updateFileList()
 
+        ideController.textContent.isEditable = false
+        ideController.currentFile = null
+
         // Close window
         val stage = deleteFileBtn?.scene?.window as Stage
         stage.close()
