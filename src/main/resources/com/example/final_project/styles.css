@@ -120,7 +120,7 @@
 
 .text-color-4-dark
 {
-    -fx-fill: #bd70e3 !important;
+    -fx-fill: #edbf9b !important;
     -fx-font-weight: bold;
 }
 
@@ -132,7 +132,7 @@
 
 .text-color-6-dark
 {
-    -fx-fill: #edbf9b !important;
+    -fx-fill: #bd70e3 !important;
     -fx-font-weight: bold;
 }
 
@@ -201,24 +201,24 @@
 
 .btn-style-dark
 {
-    -fx-background-color: #484848;
     -fx-text-fill: #cecece;
+    -fx-background-color: linear-gradient(to bottom, #5d5d5d, #484848);
 }
 
 .btn-style-dark:hover
 {
-    -fx-background-color: #5b5b5b;
+    -fx-background-color: linear-gradient(to bottom, #666666, #5b5b5b);
 }
 
 .choice-box-style-dark
 {
-    -fx-background-color: #484848;
+    -fx-background-color: linear-gradient(to bottom, #5d5d5d, #484848);
     -fx-mark-color: #cecece;
 }
 
 .choice-box-style-dark:hover
 {
-    -fx-background-color: #5b5b5b;
+    -fx-background-color: linear-gradient(to bottom, #666666, #5b5b5b);
 }
 
 .choice-box-style-dark .label {
@@ -244,49 +244,49 @@
 
 .text-color-2-neon
 {
-    -fx-fill: #52c2ea !important;
+    -fx-fill: #d555ff !important;
     -fx-font-weight: bold;
 }
 
 .text-color-3-neon
 {
-    -fx-fill: #d7b1ea !important;
+    -fx-fill: #01ffc4 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-4-neon
 {
-    -fx-fill: #bd70e3 !important;
+    -fx-fill: #e0ff00 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-5-neon
 {
-    -fx-fill: #f6d963 !important;
+    -fx-fill: #ffa600 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-6-neon
 {
-    -fx-fill: #edbf9b !important;
+    -fx-fill: #ff0098 !important;
     -fx-font-weight: bold;
 }
 
 .text-color-7-neon
 {
-    -fx-fill: #88b2e8 !important;
+    -fx-fill: #a065ff !important;
     -fx-font-weight: bold;
 }
 
 .text-color-8-neon
 {
-    -fx-fill: #ef6c2b !important;
+    -fx-fill: #00d9ff !important;
     -fx-font-weight: bold;
 }
 
 .text-color-9-neon
 {
-    -fx-fill: #949494 !important;
+    -fx-fill: #5b565b !important;
 }
 
 .bg-neon
@@ -301,7 +301,7 @@
 
 .editor-bg-neon .paragraph-text .text
 {
-    -fx-fill: #e8e8e8;
+    -fx-fill: #b3b3b3;
 
 }
 
@@ -337,24 +337,26 @@
 
 .btn-style-neon
 {
-    -fx-background-color: #00ffff;
+    -fx-background-color: linear-gradient(to bottom, #94fdfd, #00ffff);
     -fx-text-fill: #000000;
 }
 
 .btn-style-neon:hover
 {
     -fx-background-color: #02f3f3;
+    -fx-background-color: linear-gradient(to bottom, #07f4f4, #02e1e1);
 }
 
 .choice-box-style-neon
 {
-    -fx-background-color: #ff00fc;
+    -fx-background-color: linear-gradient(to bottom, #fd6ffc, #ff00fc);
     -fx-mark-color: #f1f1f1;
 }
 
 .choice-box-style-neon:hover
 {
     -fx-background-color: #f655f5;
+    -fx-background-color: linear-gradient(to bottom, #f382f2, #f655f5);
 }
 
 .choice-box-style-neon .label {
