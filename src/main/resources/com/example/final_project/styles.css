@@ -756,6 +756,7 @@
 {
     -fx-background-color: linear-gradient(to bottom, #f64f4a, #da0800);
     -fx-text-fill: #dddddd;
+    -fx-mark-color: #dddddd;
 }
 
 .choice-box-style-red:hover
@@ -774,4 +775,141 @@
 
 .choice-box-style-red .menu-item:focused {
     -fx-background-color: #a70702;
+}
+
+/* Teal theme */
+.text-color-1-teal
+{
+    -fx-fill: #a8d8d8 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-2-teal
+{
+    -fx-fill: #00ffff !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-3-teal
+{
+    -fx-fill: #008c8c !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4-teal
+{
+    -fx-fill: #ff8e42 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5-teal
+{
+    -fx-fill: #ffd1b1 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6-teal
+{
+    -fx-fill: #b1e4fc !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7-teal
+{
+    -fx-fill: #69adf0 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8-teal
+{
+    -fx-fill: #f3b9ff !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9-teal
+{
+    -fx-fill: #808080 !important;
+}
+
+.bg-teal
+{
+    -fx-background-color: #07262f;
+}
+
+.editor-bg-teal
+{
+    -fx-background-color: #303333;
+}
+
+.editor-bg-teal .paragraph-text .text
+{
+    -fx-fill: #ffffff;
+
+}
+
+.editor-bg-teal .paragraph-text .caret
+{
+    -fx-stroke: #ffffff;
+}
+
+.sidebar-bg-teal
+{
+    -fx-border-color: #428fda;
+
+}
+
+.sidebar-bg-teal .list-cell:even
+{
+    -fx-background-color: #303333;
+    -fx-text-fill: #ffffff;
+}
+
+.sidebar-bg-teal .list-cell:odd
+{
+    -fx-background-color: #363b3b;
+    -fx-text-fill: #ffffff;
+}
+
+.sidebar-bg-teal .list-cell:selected
+{
+    -fx-background-color: #286565;
+    -fx-text-fill: #ffffff;
+}
+
+
+.btn-style-teal
+{
+    -fx-background-color: linear-gradient(to bottom, #c8e8e8, #a8d8d8);
+    -fx-text-fill: #313131;
+}
+
+.btn-style-teal:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #bcdede, #94c3c3);
+    -fx-text-fill: #313131;
+}
+
+.choice-box-style-teal
+{
+    -fx-background-color: linear-gradient(to bottom, #6cacef, #428fda);
+    -fx-text-fill: #ffffff;
+    -fx-mark-color: #ffffff;
+}
+
+.choice-box-style-teal:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #7cb3ec, #529be3);
+    -fx-mark-color: #ffffff;
+}
+
+.choice-box-style-teal .label {
+    -fx-text-fill: #ffffff;
+}
+
+.choice-box-style-teal .context-menu {
+    -fx-background-color: #428fda;
+}
+
+.choice-box-style-teal .menu-item:focused {
+    -fx-background-color: #529be3;
 }
