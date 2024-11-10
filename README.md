@@ -1,4 +1,4 @@
-# Kotlin IDE Guide
+# Kotlin Code Editor Guide
 
 ## Prerequisites and Libraries
 No additional installations are necessary; all required libraries and dependencies are included in the project’s build files. To get started, simply download the project files and open them in IntelliJ IDEA.
