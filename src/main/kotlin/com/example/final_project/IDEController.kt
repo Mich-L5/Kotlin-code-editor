@@ -51,7 +51,7 @@ class IDEController : Initializable {
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
         // Add theme options & default value
-        themePicker.items?.addAll("Light", "Dark", "Neon")
+        themePicker.items?.addAll("Light", "Dark", "Neon", "Pastel")
         themePicker.value = "Light"
 
         // Apply initial (Light) theme to GUI elements
@@ -74,8 +74,13 @@ class IDEController : Initializable {
             }
             else if (newValue == "Neon")
             {
-                // Set dark theme
+                // Set neon theme
                 Theme.setNewTheme("text-color-1-neon", "text-color-2-neon","text-color-3-neon","text-color-4-neon","text-color-5-neon","text-color-6-neon","text-color-7-neon","text-color-8-neon","text-color-9-neon", "bg-neon", "editor-bg-neon", "sidebar-bg-neon", "btn-style-neon", "choice-box-style-neon")
+            }
+            else if (newValue == "Pastel")
+            {
+                // Set pastel theme
+                Theme.setNewTheme("text-color-1-pastel", "text-color-2-pastel","text-color-3-pastel","text-color-4-pastel","text-color-5-pastel","text-color-6-pastel","text-color-7-pastel","text-color-8-pastel","text-color-9-pastel", "bg-pastel", "editor-bg-pastel", "sidebar-bg-pastel", "btn-style-pastel", "choice-box-style-pastel")
             }
             // More themes can be added
 

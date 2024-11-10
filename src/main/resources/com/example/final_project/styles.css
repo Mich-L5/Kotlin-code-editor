@@ -370,3 +370,140 @@
 .choice-box-style-neon .menu-item:focused {
     -fx-background-color: #f655f5;
 }
+
+
+/* Pastel theme */
+.text-color-1-pastel
+{
+    -fx-fill: #ffb683 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-2-pastel
+{
+    -fx-fill: #f0ecb4 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-3-pastel
+{
+    -fx-fill: #ccfaa0 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4-pastel
+{
+    -fx-fill: #c5c5fd !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5-pastel
+{
+    -fx-fill: #a6deff !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6-pastel
+{
+    -fx-fill: #fdccca !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7-pastel
+{
+    -fx-fill: #f57ca7 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8-pastel
+{
+    -fx-fill: #ec7fff !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9-pastel
+{
+    -fx-fill: #928b98 !important;
+}
+
+.bg-pastel
+{
+    -fx-background-color: #413d45;
+}
+
+.editor-bg-pastel
+{
+    -fx-background-color: #67616c;
+}
+
+.editor-bg-pastel .paragraph-text .text
+{
+    -fx-fill: #fafafa;
+
+}
+
+.editor-bg-pastel .paragraph-text .caret
+{
+    -fx-stroke: #fafafa;
+}
+
+.sidebar-bg-pastel
+{
+    -fx-border-color: #2a282c;
+
+}
+
+.sidebar-bg-pastel .list-cell:even
+{
+    -fx-background-color: #67616c;
+    -fx-text-fill: #fafafa;
+}
+
+.sidebar-bg-pastel .list-cell:odd
+{
+    -fx-background-color: #6f6974;
+    -fx-text-fill: #fafafa;
+}
+
+.sidebar-bg-pastel .list-cell:selected
+{
+    -fx-background-color: #2a282c;
+    -fx-text-fill: #fafafa;
+}
+
+
+.btn-style-pastel
+{
+    -fx-background-color: linear-gradient(to bottom, #312e33, #211f23);
+    -fx-text-fill: #fafafa;
+}
+
+.btn-style-pastel:hover
+{
+    -fx-background-color: #fafafa;
+    -fx-background-color: linear-gradient(to bottom, #282228, #191519);
+}
+
+.choice-box-style-pastel
+{
+    -fx-background-color: linear-gradient(to bottom, #312e33, #211f23);
+    -fx-mark-color: #fafafa;
+}
+
+.choice-box-style-pastel:hover
+{
+    -fx-background-color: #fafafa;
+    -fx-background-color: linear-gradient(to bottom, #282228, #191519);
+}
+
+.choice-box-style-pastel .label {
+    -fx-text-fill: #fafafa;
+}
+
+.choice-box-style-pastel .context-menu {
+    -fx-background-color: #2a282c;
+}
+
+.choice-box-style-pastel .menu-item:focused {
+    -fx-background-color: #504d53;
+}
