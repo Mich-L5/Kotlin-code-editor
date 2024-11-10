@@ -51,7 +51,7 @@ class IDEController : Initializable {
     override fun initialize(url: URL?, resourceBundle: ResourceBundle?) {
 
         // Add theme options & default value
-        themePicker.items?.addAll("Light", "Dark", "Neon", "Pastel")
+        themePicker.items?.addAll("Light", "Dark", "Neon", "Pastel", "Light Pink", "Red", "Teal")
         themePicker.value = "Light"
 
         // Apply initial (Light) theme to GUI elements
@@ -81,6 +81,12 @@ class IDEController : Initializable {
             {
                 // Set pastel theme
                 Theme.setNewTheme("text-color-1-pastel", "text-color-2-pastel","text-color-3-pastel","text-color-4-pastel","text-color-5-pastel","text-color-6-pastel","text-color-7-pastel","text-color-8-pastel","text-color-9-pastel", "bg-pastel", "editor-bg-pastel", "sidebar-bg-pastel", "btn-style-pastel", "choice-box-style-pastel")
+            }
+            else if (newValue == "Light Pink")
+            {
+                // Set light pink theme
+                Theme.setNewTheme("text-color-1-pink", "text-color-2-pink","text-color-3-pink","text-color-4-pink","text-color-5-pink","text-color-6-pink","text-color-7-pink","text-color-8-pink","text-color-9-pink", "bg-pink", "editor-bg-pink", "sidebar-bg-pink", "btn-style-pink", "choice-box-style-pink")
+
             }
             // More themes can be added
 

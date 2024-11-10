@@ -343,7 +343,6 @@
 
 .btn-style-neon:hover
 {
-    -fx-background-color: #02f3f3;
     -fx-background-color: linear-gradient(to bottom, #07f4f4, #02e1e1);
 }
 
@@ -355,7 +354,6 @@
 
 .choice-box-style-neon:hover
 {
-    -fx-background-color: #f655f5;
     -fx-background-color: linear-gradient(to bottom, #f382f2, #f655f5);
 }
 
@@ -423,7 +421,7 @@
 
 .text-color-9-pastel
 {
-    -fx-fill: #928b98 !important;
+    -fx-fill: #a9a3ae !important;
 }
 
 .bg-pastel
@@ -480,7 +478,6 @@
 
 .btn-style-pastel:hover
 {
-    -fx-background-color: #fafafa;
     -fx-background-color: linear-gradient(to bottom, #282228, #191519);
 }
 
@@ -492,7 +489,6 @@
 
 .choice-box-style-pastel:hover
 {
-    -fx-background-color: #fafafa;
     -fx-background-color: linear-gradient(to bottom, #282228, #191519);
 }
 
@@ -506,4 +502,139 @@
 
 .choice-box-style-pastel .menu-item:focused {
     -fx-background-color: #504d53;
+}
+
+/* Pink theme */
+.text-color-1-pink
+{
+    -fx-fill: #ffc9e4 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-2-pink
+{
+    -fx-fill: #9d5377 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-3-pink
+{
+    -fx-fill: #f296ff !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4-pink
+{
+    -fx-fill: #62988b !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5-pink
+{
+    -fx-fill: #211d89 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6-pink
+{
+    -fx-fill: #ff6fb6 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7-pink
+{
+    -fx-fill: #cc5d94 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8-pink
+{
+    -fx-fill: #ff007e !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9-pink
+{
+    -fx-fill: #b3b3b3 !important;
+}
+
+.bg-pink
+{
+    -fx-background-color: #f3dee6;
+}
+
+.editor-bg-pink
+{
+    -fx-background-color: #fffdfe;
+}
+
+.editor-bg-pink .paragraph-text .text
+{
+    -fx-fill: #2a2a2a;
+
+}
+
+.editor-bg-pink .paragraph-text .caret
+{
+    -fx-stroke: #2a2a2a;
+}
+
+.sidebar-bg-pink
+{
+    -fx-border-color: #ffd0e2;
+
+}
+
+.sidebar-bg-pink .list-cell:even
+{
+    -fx-background-color: #fffdfe;
+    -fx-text-fill: #2a2a2a;
+}
+
+.sidebar-bg-pink .list-cell:odd
+{
+    -fx-background-color: #fff7fb;
+    -fx-text-fill: #2a2a2a;
+}
+
+.sidebar-bg-pink .list-cell:selected
+{
+    -fx-background-color: #ffd0e2;
+    -fx-text-fill: #2a2a2a;
+}
+
+
+.btn-style-pink
+{
+    -fx-background-color: linear-gradient(to bottom, #fff7fb, #f3e7ec);
+    -fx-text-fill: #2a2a2a;
+}
+
+.btn-style-pink:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #f6e9f0, #e8d8df);
+    -fx-text-fill: #2a2a2a;
+}
+
+.choice-box-style-pink
+{
+    -fx-background-color: linear-gradient(to bottom, #fa9ecc, #f881bd);
+    -fx-mark-color: #ffffff;
+}
+
+.choice-box-style-pink:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #f8aad1, #f492c4);
+}
+
+.choice-box-style-pink .label {
+    -fx-text-fill: #ffffff;
+}
+
+.choice-box-style-pink .context-menu {
+    -fx-background-color: #f881bd;
+}
+
+.choice-box-style-pink .menu-item:focused {
+    -fx-background-color: #f492c4;
 }
