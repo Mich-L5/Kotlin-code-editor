@@ -4,7 +4,7 @@
 No additional installations are necessary; all required libraries and dependencies are included in the project’s build files. To get started, simply download the project files and open them in IntelliJ IDEA.
 
 ## Running the Project
-After loading the files in IntelliJ IDEA, press the play button to launch the program. This will open a new instance of the Kotlin IDE.
+After loading the files in IntelliJ IDEA, press the play button to launch the program. This will open a new instance of the Kotlin code editor.
 
 ### Creating a New File
 To create a new file, click the "New +" button. A pop-up window will prompt you to enter a file name, which must be between 1–30 characters. Ensure each file name is unique. Once you’ve named the file, click "Create File" to create it. The new Kotlin file will appear in the left sidebar.
