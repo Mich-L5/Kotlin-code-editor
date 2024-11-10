@@ -638,3 +638,140 @@
 .choice-box-style-pink .menu-item:focused {
     -fx-background-color: #f492c4;
 }
+
+
+/* Red theme */
+.text-color-1-red
+{
+    -fx-fill: #ff0f05 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-2-red
+{
+    -fx-fill: #ff8e81 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-3-red
+{
+    -fx-fill: #ff7500 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-4-red
+{
+    -fx-fill: #ffd4b7 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-5-red
+{
+    -fx-fill: #ffb207 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-6-red
+{
+    -fx-fill: #66eb6a !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-7-red
+{
+    -fx-fill: #89aed3 !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-8-red
+{
+    -fx-fill: #bf4d4d !important;
+    -fx-font-weight: bold;
+}
+
+.text-color-9-red
+{
+    -fx-fill: #808080 !important;
+}
+
+.bg-red
+{
+    -fx-background-color: #141414;
+}
+
+.editor-bg-red
+{
+    -fx-background-color: #2f2f2f;
+}
+
+.editor-bg-red .paragraph-text .text
+{
+    -fx-fill: #dddddd;
+
+}
+
+.editor-bg-red .paragraph-text .caret
+{
+    -fx-stroke: #da0800;
+}
+
+.sidebar-bg-red
+{
+    -fx-border-color: #222222;
+
+}
+
+.sidebar-bg-red .list-cell:even
+{
+    -fx-background-color: #c90902;
+    -fx-text-fill: #dddddd;
+}
+
+.sidebar-bg-red .list-cell:odd
+{
+    -fx-background-color: #da0800;
+    -fx-text-fill: #dddddd;
+}
+
+.sidebar-bg-red .list-cell:selected
+{
+    -fx-background-color: #222222;
+    -fx-text-fill: #dddddd;
+}
+
+
+.btn-style-red
+{
+    -fx-background-color: linear-gradient(to bottom, #f64f4a, #da0800);
+    -fx-text-fill: #dddddd;
+}
+
+.btn-style-red:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #c7110a, #a70702);
+    -fx-text-fill: #dddddd;
+}
+
+.choice-box-style-red
+{
+    -fx-background-color: linear-gradient(to bottom, #f64f4a, #da0800);
+    -fx-text-fill: #dddddd;
+}
+
+.choice-box-style-red:hover
+{
+    -fx-background-color: linear-gradient(to bottom, #c7110a, #a70702);
+    -fx-mark-color: #dddddd;
+}
+
+.choice-box-style-red .label {
+    -fx-text-fill: #dddddd;
+}
+
+.choice-box-style-red .context-menu {
+    -fx-background-color: #da0800;
+}
+
+.choice-box-style-red .menu-item:focused {
+    -fx-background-color: #a70702;
+}

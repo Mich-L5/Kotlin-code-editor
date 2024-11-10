@@ -86,7 +86,11 @@ class IDEController : Initializable {
             {
                 // Set light pink theme
                 Theme.setNewTheme("text-color-1-pink", "text-color-2-pink","text-color-3-pink","text-color-4-pink","text-color-5-pink","text-color-6-pink","text-color-7-pink","text-color-8-pink","text-color-9-pink", "bg-pink", "editor-bg-pink", "sidebar-bg-pink", "btn-style-pink", "choice-box-style-pink")
-
+            }
+            else if (newValue == "Red")
+            {
+                // Set light pink theme
+                Theme.setNewTheme("text-color-1-red", "text-color-2-red","text-color-3-red","text-color-4-red","text-color-5-red","text-color-6-red","text-color-7-red","text-color-8-red","text-color-9-red", "bg-red", "editor-bg-red", "sidebar-bg-red", "btn-style-red", "choice-box-style-red")
             }
             // More themes can be added
 
