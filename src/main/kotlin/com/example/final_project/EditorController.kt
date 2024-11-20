@@ -19,7 +19,7 @@ import java.net.URL
 import java.util.*
 
 
-class IDEController : Initializable {
+class EditorController : Initializable {
 
     @FXML
     private lateinit var anchorPane: AnchorPane

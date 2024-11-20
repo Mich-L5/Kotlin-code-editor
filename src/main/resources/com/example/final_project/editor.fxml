@@ -12,7 +12,7 @@
 <?import org.fxmisc.richtext.CodeArea?>
 
 <?import org.fxmisc.flowless.VirtualizedScrollPane?>
-<AnchorPane fx:id="anchorPane" prefHeight="750.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.IDEController">
+<AnchorPane fx:id="anchorPane" prefHeight="750.0" prefWidth="1200.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.final_project.EditorController">
 
    <children>
       <VBox prefHeight="750.0" prefWidth="1200.0">

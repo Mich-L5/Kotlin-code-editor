@@ -12,15 +12,15 @@ class ConfirmDeleteController {
 
     private val dbHelper = DatabaseHelper()
 
-    private lateinit var ideController: IDEController
+    private lateinit var editorController: EditorController
 
     /**
      * Sets the IDEController (this is executed in the IDEController class)
      *
-     * @param ideController IDE Controller to be set.
+     * @param editorController IDE Controller to be set.
      */
-    fun setIDEController(ideController: IDEController) {
-        this.ideController = ideController
+    fun setIDEController(editorController: EditorController) {
+        this.editorController = editorController
     }
 
     private lateinit var fileToDelete: File
@@ -43,10 +43,10 @@ class ConfirmDeleteController {
     fun deleteFile(event: ActionEvent?) {
 
         dbHelper.deleteFile(fileToDelete.getFileName())
-        ideController.updateFileList()
+        editorController.updateFileList()
 
-        ideController.textContent.isEditable = false
-        ideController.currentFile = null
+        editorController.textContent.isEditable = false
+        editorController.currentFile = null
 
         // Close window
         val stage = deleteFileBtn?.scene?.window as Stage

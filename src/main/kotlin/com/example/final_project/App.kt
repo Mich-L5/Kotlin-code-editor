@@ -7,9 +7,9 @@ import javafx.stage.Stage
 
 class App : Application() {
     override fun start(stage: Stage) {
-        val fxmlLoader = FXMLLoader(App::class.java.getResource("ide.fxml"))
+        val fxmlLoader = FXMLLoader(App::class.java.getResource("editor.fxml"))
         val scene = Scene(fxmlLoader.load())
-        stage.title = "KOTLIN IDE"
+        stage.title = "KOTLIN CODE EDITOR"
         stage.scene = scene
         stage.show()
     }
@@ -21,7 +21,3 @@ class App : Application() {
         }
     }
 }
-
-//fun main() {
-//    Application.launch(App::class.java)
-//}

@@ -25,15 +25,15 @@ class NewFilePopupController : Initializable {
 
     private val dbHelper = DatabaseHelper()
 
-    private lateinit var ideController: IDEController
+    private lateinit var editorController: EditorController
 
     /**
      * Sets the IDEController (this is executed in the IDEController class)
      *
-     * @param ideController IDE Controller to be set.
+     * @param editorController IDE Controller to be set.
      */
-    fun setIDEController(ideController: IDEController) {
-        this.ideController = ideController
+    fun setIDEController(editorController: EditorController) {
+        this.editorController = editorController
     }
 
     /**
@@ -62,7 +62,7 @@ class NewFilePopupController : Initializable {
                 // Create new file
                 val file = File(fileName)
                 dbHelper.insertFile(file)
-                ideController.addToFileList(file)
+                editorController.addToFileList(file)
 
                 // Close window
                 val stage = createFileBtn?.scene?.window as Stage
