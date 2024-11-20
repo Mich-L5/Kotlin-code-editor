@@ -48,10 +48,6 @@ class SyntaxHighlight {
 
             // Add default (no) style to text between matches
             val length = matchResult.range.first - lastEnd
-//            if (length < 0) {
-//                println("Warning: Negative length detected, skipping this match")
-//                continue
-//            }
             styledText.add(emptyList(), length)
 
             // Apply specific style to matched pattern
