@@ -1,7 +1,7 @@
 # Kotlin Code Editor Guide
 
 ## Prerequisites and Libraries
-No additional installations are necessary; all required libraries and dependencies are included in the project’s build files. To get started, simply download the project files and open them in IntelliJ IDEA.
+To get started, simply download the project files and open them in IntelliJ IDEA. Ensure Java and JavaFX are installed.
 
 ## Running the Project
 After loading the files in IntelliJ IDEA, press the play button to launch the program. This will open a new instance of the Kotlin code editor.
