@@ -7,7 +7,8 @@ import java.sql.SQLException
 class DatabaseHelper {
 
     // Create connection string
-    private val url = "jdbc:sqlite:files.db"
+    //private val url = "jdbc:sqlite:files.db"
+    private val url = "jdbc:sqlite::resource:files.db"
 
     /**
      * Creates the table upon initialization.
