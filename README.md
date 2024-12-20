@@ -9,13 +9,30 @@
 ![kotlin-code-editor1](https://github.com/user-attachments/assets/959b1246-497b-43ed-8cf2-1f449e1d3e53)
 
 
-# Kotlin Code Editor Guide
+## About
 
-## Prerequisites and Libraries
-To get started, simply download the project files and open them in IntelliJ IDEA. Ensure Java and JavaFX are installed.
+This project is a Kotlin code editor desktop application for Mac and Windows.
 
-## Running the Project
-After loading the files in IntelliJ IDEA, press the play button to launch the program. This will open a new instance of the Kotlin code editor.
+## Download
+
+The application and download instructions are available for download [here](https://drive.google.com/drive/u/0/folders/1wk756_-e0rMv2jj-gcB2mAdNOK1WqwcC).
+
+## Technologies
+
+<picture>
+  <img alt="Kotlin badge" src="https://img.shields.io/badge/Kotlin-383838">
+</picture>
+<picture>
+  <img alt="FXML badge" src="https://img.shields.io/badge/FXML-383838">
+</picture>
+<picture>
+  <img alt="CSS badge" src="https://img.shields.io/badge/CSS-383838">
+</picture>
+<picture>
+  <img alt="SQLite badge" src="https://img.shields.io/badge/SQLite-383838">
+</picture>
+
+## How to use
 
 ### Creating a New File
 To create a new file, click the "New +" button. A pop-up window will prompt you to enter a file name, which must be between 1–30 characters. Ensure each file name is unique. Once you’ve named the file, click "Create File" to create it. The new Kotlin file will appear in the left sidebar.
