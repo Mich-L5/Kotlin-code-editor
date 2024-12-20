@@ -1,3 +1,16 @@
+# Kotlin Code Editor
+<picture>
+  <img alt="Developer badge" src="https://img.shields.io/badge/Developer-Mich--L5-d9d389?logo=github&logoColor=white">
+</picture>
+<picture>
+  <img alt="Designer badge" src="https://img.shields.io/badge/Designer-Mich--L5-00baff?logo=github&logoColor=white">
+</picture>
+
+![kolin-code-editor-preview](https://github.com/user-attachments/assets/0907d067-28fa-4600-9119-cec02dc37b35)
+
+
+
+
 # Kotlin Code Editor Guide
 
 ## Prerequisites and Libraries
