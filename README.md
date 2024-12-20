@@ -6,9 +6,7 @@
   <img alt="Designer badge" src="https://img.shields.io/badge/Designer-Mich--L5-00baff?logo=github&logoColor=white">
 </picture>
 
-![kolin-code-editor-preview](https://github.com/user-attachments/assets/0907d067-28fa-4600-9119-cec02dc37b35)
-
-
+![kotlin-code-editor1](https://github.com/user-attachments/assets/959b1246-497b-43ed-8cf2-1f449e1d3e53)
 
 
 # Kotlin Code Editor Guide
